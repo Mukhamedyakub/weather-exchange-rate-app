@@ -167,7 +167,6 @@ weather-exchange-rate-app/
 │       └── style.css    # Styling for the app
 ├── views/
 │   └── index.ejs        # Main HTML template
-├── .env                 # Environment variables
 ├── server.js            # Application server
 ├── package.json         # Project dependencies and metadata
 ```

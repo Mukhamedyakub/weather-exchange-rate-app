@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather & Exchange Rate</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Leaflet Styles -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+</head>
+<body>
+<div class="container">
+    <!-- Header -->
+    <h1>🌤 Weather & Exchange Rate</h1>
+
+    <!-- Service Description -->
+    <p class="service-description">
+        Welcome! This service allows you to check the current weather in any city worldwide and the exchange rate of USD to KZT.
+        Plus, enjoy a random joke to brighten your day! 😊
+    </p>
+
+    <!-- Exchange Rate -->
+    <% if (exchangeRate !== null) { %>
+        <div class="exchange-rate">
+            <p>1 USD = <%= exchangeRate %> KZT</p>
+        </div>
+    <% } else if (error !== null) { %>
+        <p class="error"><%= error %></p>
+    <% } %>
+
+    <!-- Weather Search Form -->
+    <form action="/" method="post" class="weather-form">
+        <input
+                name="city"
+                type="text"
+                placeholder="Enter city name..."
+                required
+        />
+        <button type="submit">Get Weather</button>
+    </form>
+
+    <!-- Weather Results -->
+    <% if (weatherData !== null) { %>
+        <div class="weather-details">
+            <h2><%= weatherData.city %>, <%= weatherData.country %></h2>
+            <img
+                    src="http://openweathermap.org/img/wn/<%= weatherData.icon %>@2x.png"
+                    alt="<%= weatherData.description %>"
+            />
+            <p><strong>Temperature:</strong> <%= weatherData.temperature %>°C</p>
+            <p><strong>Feels Like:</strong> <%= weatherData.feels_like %>°C</p>
+            <p><strong>Description:</strong> <%= weatherData.description %></p>
+            <p><strong>Humidity:</strong> <%= weatherData.humidity %>%</p>
+            <p><strong>Pressure:</strong> <%= weatherData.pressure %> hPa</p>
+            <p><strong>Wind Speed:</strong> <%= weatherData.wind_speed %> m/s</p>
+            <p><strong>Rain Volume (Last 3 hrs):</strong> <%= weatherData.rain_volume %> mm</p>
+            <p><strong>Coordinates:</strong> [<%= weatherData.coordinates.lat %>, <%= weatherData.coordinates.lon %>]</p>
+        </div>
+    <% } %>
+
+    <!-- Joke Section -->
+    <div class="joke-section">
+        <h2>Geek Joke</h2>
+        <p id="joke-text"><%= joke %></p>
+    </div>
+
+    <!-- Map Section -->
+    <% if (weatherData !== null) { %>
+        <div id="map" style="height: 300px; margin-top: 20px;"></div>
+        <script>
+            // Initialize the map
+            const map = L.map('map').setView([<%= weatherData.coordinates.lat %>, <%= weatherData.coordinates.lon %>], 10);
+
+            // Add OpenStreetMap tiles
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+
+            // Add a marker for the city's coordinates
+            L.marker([<%= weatherData.coordinates.lat %>, <%= weatherData.coordinates.lon %>]).addTo(map)
+                .bindPopup(`<strong><%= weatherData.city %>, <%= weatherData.country %></strong>`)
+                .openPopup();
+        </script>
+    <% } %>
+</div>
+</body>
+</html>

@@ -1,0 +1,163 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #ececec, #f9f9f9);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Main Container */
+.container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+}
+
+/* Header */
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #4caf50;
+}
+
+/* Service Description */
+.service-description {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Exchange Rate */
+.exchange-rate {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Weather Search Form */
+.weather-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.weather-form input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.weather-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background: #4caf50;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.weather-form button:hover {
+    background: #45a049;
+}
+
+/* Weather Details */
+.weather-details {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+    text-align: center;
+    color: #333;
+}
+
+.weather-details img {
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.weather-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.weather-details p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Joke Section */
+.joke-section {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    background: #fbfbfb;
+    border: 1px solid #ffeeba;
+    text-align: center;
+    color: #856404;
+}
+
+.joke-section h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #5aa90a;
+}
+
+.joke-section p {
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Map */
+#map {
+    height: 300px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .weather-form {
+        flex-direction: column;
+    }
+
+    .weather-form input {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .weather-details {
+        font-size: 14px;
+    }
+}
+
+

@@ -1,0 +1,28 @@
+{
+  "name": "weather-exchange-array-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Mukhamedyakub",
+  "license": "ISC",
+  "description": "This service allows you to check the current weather in any city worldwide and the exchange rate of USD to KZT.",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mukhamedyakub1/weather-exchange-array-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Mukhamedyakub1/weather-exchange-array-app/issues"
+  },
+  "homepage": "https://github.com/Mukhamedyakub1/weather-exchange-array-app#readme"
+}

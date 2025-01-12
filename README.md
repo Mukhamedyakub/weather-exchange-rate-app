@@ -26,7 +26,7 @@ Ensure the following are installed on your system:
 
 ### 2. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/weather-exchange-rate-app.git
+git clone https://github.com/Mukhamedyakub/weather-exchange-rate-app.git
 cd weather-exchange-rate-app
 ```
 

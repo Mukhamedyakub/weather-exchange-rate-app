@@ -193,10 +193,8 @@ weather-exchange-rate-app/
 - Displays the current exchange rate.
 - Includes a weather search bar and a random joke.
 
-(https://github.com/Mukhamedyakub/weather-exchange-rate-app/blob/main/Start-page.png)
 
 ### 2. Weather Results
 - Shows detailed weather information.
 - Displays a map pinpointing the city’s location.
 
-(https://github.com/Mukhamedyakub/weather-exchange-rate-app/blob/main/Result-page.png)
